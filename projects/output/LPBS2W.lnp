@@ -1,0 +1,31 @@
+--cpu Cortex-M3
+".\output\startup.o"
+".\output\app_main.o"
+".\output\cjson.o"
+".\output\customer_spi.o"
+".\output\devlib.o"
+".\output\devrule.o"
+".\output\flash.o"
+".\output\httpdcallback.o"
+".\output\keydrv.o"
+".\output\led.o"
+".\output\powerconsume.o"
+".\output\powerstaticsrecord.o"
+".\output\produce_test.o"
+".\output\publicservercom.o"
+".\output\remote_update.o"
+".\output\rn8209.o"
+".\output\rttime.o"
+".\output\switchapp.o"
+".\output\tcpsocket.o"
+".\output\tickclock.o"
+".\output\udpservercallback.o"
+".\output\udpsocket.o"
+".\output\read_power.o"
+".\output\security_mode.o"
+"..\sdk\1.50\libs\LPB100Kernel.lib"
+--strict --scatter "LPBS2W.sct"
+
+--keep *.o(.mach*.init)  --keep *.o(.shell*.cmd)  --keep *.o(.sched.stub*) --keep *.o(.driver*.isr) --summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\output\LPBS2W.map" -o .\output\LPBS2W.axf
